@@ -11,7 +11,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let pokebola: Sprite = null
 let mySprite: Sprite = null
 game.splash("VALERIA LA MOLACHA")
-music.powerUp.play()
+music.setVolume(15)
+music.jumpUp.play()
 tiles.setTilemap(tiles.createTilemap(hex`1000100001010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101`, img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -77,9 +78,9 @@ game.onUpdateInterval(2000, function () {
         . . . . . . . . . . . f f f . . . . . . . 
         . . . . . . . . . . . . . . . . . . . . . 
         `, SpriteKind.Enemy)
-    mySprite.setPosition(randint(0, 160), randint(0, 120))
+    mySprite.setPosition(randint(0, 250), randint(0, 250))
 })
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(200, function () {
     pokebola = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . 2 2 2 2 2 . . . . . . 
@@ -98,5 +99,5 @@ game.onUpdateInterval(500, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Food)
-    pokebola.setPosition(randint(0, 160), randint(0, 120))
+    pokebola.setPosition(randint(0, 250), randint(0, 250))
 })
